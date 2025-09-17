@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Vik Community Ideas</title>
+  <style>
+    body {
+      background: #0b0b0b;
+      color: #00ff88;
+      font-family: monospace;
+      margin: 0;
+      padding: 20px;
+    }
+    h1 {
+      text-align: center;
+      color: #00ffaa;
+      margin-bottom: 20px;
+    }
+    #ideas {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+    }
+    .idea {
+      background: #111;
+      border: 1px solid #00ff88;
+      border-radius: 8px;
+      padding: 12px;
+      box-shadow: 0 0 10px rgba(0,255,136,0.4);
+    }
+    #new-idea {
+      margin-top: 20px;
+      display: flex;
+      gap: 10px;
+    }
+    #ideaInput {
+      flex: 1;
+      padding: 8px;
+      font-size: 1rem;
+      border: 1px solid #00ffaa;
+      border-radius: 5px;
+      background: #0b0b0b;
+      color: #00ff88;
+    }
+    button {
+      padding: 8px 12px;
+      background: #00ffaa;
+      color: #0b0b0b;
+      font-weight: bold;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    button:hover {
+      background: #00cc88;
+    }
+  </style>
+</head>
+<body>
+  <h1>💡 Vik Community Ideas</h1>
+  
+  <div id="ideas">
+    <div class="idea">🟢 Add a new command for graphics animations in Vik.</div>
+    <div class="idea">🟢 Create a Vik package manager for sharing code snippets.</div>
+    <div class="idea">🟢 Build an official Vik website with docs and examples.</div>
+    <div class="idea">🟢 Add Vik functions for sound/music support.</div>
+    <div class="idea">🟢 Make Vik able to export to web apps easily.</div>
+  </div>
+
+  <div id="new-idea">
+    <input id="ideaInput" type="text" placeholder="Write your Vik idea here..." />
+    <button onclick="addIdea()">Post</button>
+  </div>
+
+  <script>
+    function addIdea() {
+      const input = document.getElementById("ideaInput");
+      const text = input.value.trim();
+      if (text) {
+        const ideaBox = document.createElement("div");
+        ideaBox.className = "idea";
+        ideaBox.textContent = "🟢 " + text;
+        document.getElementById("ideas").appendChild(ideaBox);
+        input.value = "";
+      }
+    }
+  </script>
+</body>
+</html>
